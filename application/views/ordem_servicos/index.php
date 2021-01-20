@@ -38,9 +38,7 @@
                         </div>                          
                         </div>
                        <?php endif;?>
-
                        <?php if($message = $this->session->flashdata('sucesso')): ?>
-
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -52,7 +50,6 @@
                         </div>                          
                         </div>
                        <?php endif;?>
-                    
                     <!-- DataTales Example -->
                     <div class="card">
                                      <div class="card-header" style="background-color:#f7f7f7 ; border-bottom: 1px solid #9e9e9e;">
@@ -72,8 +69,9 @@
                                             <th class="text-center">#</th>
                                             <th class="text-center">Data emissão</th>
                                              <th class="text-center">Cliente</th>
-                                             <th class="text-center">Forma de pagamentos</th>
+                                            
                                               <th class="text-center">Situação</th>
+                                               <th class="text-center">Forma de pagamentos</th>
                                               <th class="text-center">Valor Total</th>
                                      
                                             <th class="text-center no-sort">Ações</th>
@@ -85,9 +83,6 @@
                                          <td class="text-center"><?php echo $os->ordem_servico_data_emissao?></td>
                                             <td class="text-center"><?php echo $os->cliente_nome; ?></td>
                                             <td class="text-center"><?php echo ($os->ordem_servico_status  == 1 ? '<span class="badge badge-success badge-shadow btn-sm">Paga</span>' : '<span class="badge badge-danger badge-shadow btn-sm">Em aberto</span>'); ?></td>
-                                            
-                                       
-                                       
                         <td class="text-center"><?php echo ($os->ordem_servico_status  == 1 ? $os->forma_pagamento : 'Em aberto'); ?></td>
 
                         <td class="text-center"><?php echo 'R$&nbsp'.$os->ordem_servico_valor_total; ?></td>
@@ -120,7 +115,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Não</button>
-                                                        <a class="btn btn-danger btn-sm" href="<?php echo base_url('ordens_servicos/del/'.$os->servico_id); ?>">Sim</a>
+                                                        <a class="btn btn-danger btn-sm" href="<?php echo base_url('ordem_servicos/del/'.$os->ordem_servico_id); ?>">Sim</a>
                                                     </div>
                                                 </div>
                                             </div>

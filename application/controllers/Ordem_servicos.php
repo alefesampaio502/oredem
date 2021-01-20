@@ -46,7 +46,7 @@ class Ordem_servicos extends CI_Controller {
 		}
 
 
-		public function add(){
+public function add(){
 
 			// Aqui vem form_validation_set_rules()
 			$this->form_validation->set_rules('ordem_servico_cliente_id', '', 'required');
@@ -121,7 +121,7 @@ class Ordem_servicos extends CI_Controller {
 						'ordem_ts_id_ordem_servico' => $id_ordem_servico,
 						'ordem_ts_id_servico' => $servico_id[$i],
 						'ordem_ts_quantidade' => $servico_quantidade[$i],
-						'ordem_ts_quantidade' => $servico_preco[$i],
+						'ordem_ts_valor_unitario' => $servico_preco[$i],
 						'ordem_ts_valor_desconto' => $servico_desconto[$i],
 						'ordem_ts_valor_total' => $servico_item_total[$i],
 
@@ -169,11 +169,7 @@ class Ordem_servicos extends CI_Controller {
 			}
 		}
 
-
-
-
-
-		public function edit($ordem_servico_id = NULL){
+public function edit($ordem_servico_id = NULL){
 
 			if(!$ordem_servico_id || !$this->core_model->get_by_id('ordens_servicos', array('ordem_servico_id' => $ordem_servico_id))){
 				$this->session->set_flashdata('error','Ordem de serviços não encontrada!');
@@ -228,7 +224,7 @@ class Ordem_servicos extends CI_Controller {
 				}
 
 					$data['ordem_servico_valor_total'] = trim(preg_replace('/\$/', '',$ordem_servico_valor_total));
-					$data = $this->security->xss_clean($data);
+				//	$data = $this->security->xss_clean($data);
 					$data = html_escape($data);
 
                       //echo '<pre>';
@@ -265,7 +261,7 @@ class Ordem_servicos extends CI_Controller {
 							'ordem_ts_id_ordem_servico' => $ordem_servico_id,
 							'ordem_ts_id_servico' => $servico_id[$i],
 							'ordem_ts_quantidade' => $servico_quantidade[$i],
-							'ordem_ts_quantidade' => $servico_preco[$i],
+							'ordem_ts_valor_unitario' => $servico_preco[$i],
 							'ordem_ts_valor_desconto' => $servico_desconto[$i],
 							'ordem_ts_valor_total' => $servico_item_total[$i],
 
@@ -320,6 +316,21 @@ class Ordem_servicos extends CI_Controller {
 			}
 
 		}
+
+ public function del($ordem_servico_id = NULL){
+ 	if(!$ordem_servico_id || !$this->core_model->get_by_id('ordens_servicos', array('ordem_servico_id' => $ordem_servico_id))){
+				$this->session->set_flashdata('error','Ordem de serviços não encontrada!');
+				redirect('os');
+			}
+
+			if($this->core_model->get_by_id('ordens_servicos', array('ordem_servico_id' => $ordem_servico_id, 'ordem_servico_status' => 0))){
+				$this->session->set_flashdata('error','ATENÇÂO : Não foi possível excluir essa ordem de serviço porque ela ainda está em aberto !');
+				redirect('os');
+			}
+
+			$this->core_model->delete('ordens_servicos', array('ordem_servico_id' => $ordem_servico_id));
+			redirect('os');
+ }
 
 
 
@@ -411,7 +422,7 @@ class Ordem_servicos extends CI_Controller {
 					$html .= '<td>'.$servico->servico_nome.'</td>';
 					$html .= '<td align="left">'.$servico->ordem_ts_quantidade.'</td>';
 					$html .= '<td>'.'R$ &nbsp;' .$servico->ordem_ts_valor_unitario.'</td>';
-					$html .= '<td>'.'% &nbsp;' .$servico->ordem_ts_valor_desconto.'</td>';
+					$html .= '<td>'. $servico->ordem_ts_valor_desconto.'% &nbsp;'.'</td>';
 					$html .= '<td>'.'R$ &nbsp;' .$servico->ordem_ts_valor_total.'</td>';
 					$html .= '</tr>';
 				endforeach;

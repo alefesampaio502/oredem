@@ -200,11 +200,11 @@ public function del($marca_id = NULL){
 if(!$marca_id || !$this->core_model->get_by_id('marcas', array('marca_id' => $marca_id))){
 		$this->session->set_flashdata('error','Serviço não encontrado');
 	redirect('marcas');
-}else{
+    }else{
 	$this->core_model->delete('marcas', array('marca_id' => $marca_id));
 	redirect('marcas');
 
-}
+    }
 }
 
 

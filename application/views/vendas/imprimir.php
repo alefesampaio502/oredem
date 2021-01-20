@@ -29,13 +29,13 @@
                    </div>
 <div class="row">
     <div class="col-md-4">
-         <a href="<?php echo base_url('os/pdf/' .$ordem_servico->ordem_servico_id);?>" class="btn btn-lg btn-dark"> <i class="fas fa-print mr-2"></i>Gerar impressão</a>
+         <a href="<?php echo base_url('vendas/pdf/' .$venda->venda_id);?>" class="btn btn-lg btn-dark"> <i class="fas fa-print mr-2"></i>Imprimir venda</a>
     </div>
     <div class="col-md-4">
-         <a href="<?php echo base_url('os/add');?>" class="btn btn-lg btn-success"><i class="fas fa-shopping-basket mr-2"></i>Nova orde de serviço</a>
+         <a href="<?php echo base_url('vendas/add');?>" class="btn btn-lg btn-success"><i class="fas fa-shopping-basket mr-2"></i>Nova venda</a>
     </div>
     <div class="col-md-4">
-         <a href="<?php echo base_url('os');?>" class="btn btn-lg btn-dark"> <i class="fas fa-list-ol mr-2"></i>Listagen de ordem</a>
+         <a href="<?php echo base_url('vendas');?>" class="btn btn-lg btn-dark"> <i class="fas fa-list-ol mr-2"></i>Listagen de venda</a>
     </div>
     </div>
 </div>

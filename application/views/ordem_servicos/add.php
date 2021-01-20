@@ -8,11 +8,11 @@
        <!-- DataTales Example -->
        <div class="card shadow mb-2 ">
         <div class="card-header py-0 " style="background-color:#f5f5f5; border-bottom: 1px solid #9e9e9e;">
-            <h6 class="m-0 font-weight-bold text-primary float-left mt-3"><?php echo $titulo ?></h6>     
+            <h6 class="m-0 font-weight-bold text-primary float-left mt-3 mb-3"><?php echo $titulo ?></h6>     
         </div>
         <div class="card-body">
 <form class="user" action="" id="form"name="form_add"enctype="multipart/form-data" method="post"accept-charset="utf-8">
-        <fieldset id="vendas" class="mt-4 border p-2">
+        <fieldset id="vendas" class="mt-4 border p-2 ">
                    <legend class="font-small"><i class="fas fa-tools"></i>&nbsp;&nbsp;Escolha os serviços</legend>
                         <div class="form-group row">
                             <div class="ui-widget col-lg-12 mb-1 mt-1">
@@ -60,7 +60,6 @@
                         </div>
 
                     </fieldset>   
-
                     <fieldset class="mt-4 border p-2">
 
                         <legend class="font-small"><i class="far fa-list-alt"></i>&nbsp;&nbsp;Dados da ordem</legend>
@@ -139,9 +138,10 @@
 
                     </fieldset>
 
-                    <div class="mt-3">
+                    <div class="mt-3 float-right mr-4">
+                          <a href="<?php echo base_url('os'); ?>" class="btn btn-secondary btn-sm">Voltar</a>
                         <button class="btn btn-primary btn-sm mr-2" id="btn-cadastrar-venda" form="form">Cadastrar</button>
-                        <a href="<?php echo base_url('os'); ?>" class="btn btn-secondary btn-sm">Voltar</a>
+                      
                     </div>
 
                 </form>

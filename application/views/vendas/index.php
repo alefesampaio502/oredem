@@ -38,9 +38,7 @@
                         </div>                          
                         </div>
                        <?php endif;?>
-
                        <?php if($message = $this->session->flashdata('sucesso')): ?>
-
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -52,7 +50,6 @@
                         </div>                          
                         </div>
                        <?php endif;?>
-                    
                     <!-- DataTales Example -->
                     <div class="card">
                                      <div class="card-header" style="background-color:#f7f7f7 ; border-bottom: 1px solid #9e9e9e;">
@@ -60,7 +57,7 @@
                             <div class="col-md-8 mt-2">
                                 <h6 class="font-weight-bold text-primary text-left"><?php echo $titulo ?></h6></div>
                                 <div class="col-md-4 text-right">
-                                 <a href="<?php echo base_url('produtos/add'); ?>" title="Cadastrar novo produto" class="btn btn-success btn-sm "><i class="fas fa-user-plus mr-1"></i>Novo</a>
+                                 <a href="<?php echo base_url('vendas/add'); ?>" title="Cadastrar nova venda" class="btn btn-success btn-sm "><i class="fas fa-shopping-cart mr-1"></i>Nova</a>
                              </div>
                          </div>
                      </div>  
@@ -70,37 +67,40 @@
                                     <thead>
                                         <tr>
                                             <th class="text-center">#</th>
-                                            <th class="text-center no-sort">Código do produto</th>
-                                            <th class="text-center no-sort">Nome do produto</th>
-                                            <th class="text-center no-sort">Marca</th>
-                                            <th class="text-center no-sort">Categoria</th>
-                                            <th class="text-center no-sort">Estoque mínimo</th>
-                                            <th class="text-center no-sort">Qtde estoque</th>
-                                            <th class="text-center no-sort">Ativos</th>
+                                            <th class="text-center">Data emissão</th>
+                                             <th class="text-center">Cliente</th>
+                                            
+                                              
+                                               <th class="text-center">Forma de pagamentos</th>
+                                              <th class="text-center">Valor Total</th>
+                                     
                                             <th class="text-center no-sort">Ações</th>
                                         </tr>
                                     </thead>
-                                    <?php foreach($produtos as $produto): ?>
-                                   
-                                     <tr>
-                                            <td class="text-center"><?php echo $produto->produto_id ;?></td>
-                                            <td class="text-center"><?php echo $produto->produto_codigo; ?></td>
-                                            <td class="text-center"><?php echo $produto->produto_descricao; ?></td>
-                                            <td class="text-center"><?php echo $produto->produto_marca; ?></td>
-                                            <td class="text-center"><?php echo $produto->produto_categoria; ?></td>
-                                            <td class="text-center"><?php echo '<span class="badge badge-success badge-shadow btn-sm"> '.$produto->produto_estoque_minimo.'</span>'; ?></td>
-  <td class="text-center"><?php echo ($produto->produto_estoque_minimo == $produto->produto_qtde_estoque ? '<span class="badge badge-danger badge-shadow btn-sm">'.$produto->produto_qtde_estoque.'</span>' : '<span class="badge badge-dark badge-shadow btn-sm">'.$produto->produto_qtde_estoque.'</span>'); ?></td>
+                                    <?php foreach ($vendas as $venda): ?>
+                                     <tr>   
+                                            <td class="text-center"><?php echo $venda->venda_id;?></td>
+                                         <td class="text-center"><?php echo $venda->venda_data_emissao?></td>
+                                            <td class="text-center"><?php echo $venda->cliente_nome_completo; ?></td>
+                                            <td class="text-center"><?php echo $venda->forma_pagamento; ?></td>
+                                           
+                       
+
+                        <td class="text-center"><?php echo 'R$&nbsp'.$venda->venda_valor_total; ?></td>
                                             
-                        <td class="text-center"><?php echo ($produto->produto_ativo  == 1 ? '<span class="badge badge-success badge-shadow btn-sm">Sim</span>' : '<span class="badge badge-danger badge-shadow btn-sm">Não</span>'); ?></td>
 
                 <td class="text-center">
-                      <a href="<?php echo base_url('produtos/edit/'.$produto->produto_id); ?>" class="btn btn-icon btn-primary mr-2"><i class="far fa-edit"></i></a>
-                      <a href="javascript(void)" data-toggle="modal" data-target="#user-<?php echo $produto->produto_id;?>" class="btn btn-icon btn-danger"><i class="fas fa-trash"></i></a>
+                      <a href="<?php echo base_url('vendas/pdf/'.$venda->venda_id); ?>" class="btn btn-icon btn-dark mr-2"><i class="fas fa-print"></i></i></a>
+                      
+                      <a title="Visualizar" href="<?php echo base_url('vendas/edit/'.$venda->venda_id); ?>" class="btn btn-icon btn-primary mr-2"><i class="fas fa-eye"></i></i></a>
+                      
+
+                      <a href="javascript(void)" data-toggle="modal" data-target="#user-<?php echo $venda->venda_id;?>" class="btn btn-icon btn-danger"><i class="fas fa-trash-alt"></i></a>
                     </td>    
                                         </tr>
 
                                            <!-- Logout Modal-->
-                                        <div class="modal fade" id="user-<?php echo $produto->produto_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                        <div class="modal fade" id="user-<?php echo $venda->venda_id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                                             aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
@@ -116,7 +116,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Não</button>
-                                                        <a class="btn btn-danger btn-sm" href="<?php echo base_url('produtos/del/'.$produto->produto_id); ?>">Sim</a>
+                                                        <a class="btn btn-danger btn-sm" href="<?php echo base_url('vendas/del/'.$venda->venda_id); ?>">Sim</a>
                                                     </div>
                                                 </div>
                                             </div>

@@ -180,9 +180,9 @@
 
                     <input type="hidden" name="ordem_servico_id" value="<?php echo $ordem_servico->ordem_servico_id ?>" />
 			
-                    <div class="mt-3">
+                    <div class="mt-3 float-right">
+                         <a href="<?php echo base_url('os'); ?>" class="btn btn-secondary btn-sm">Voltar</a>
                         <button class="btn btn-primary btn-sm mr-2" id="btn-cadastrar-venda" form="form" <?php echo ($ordem_servico->ordem_servico_status == 1 ? 'disabled' : ''); ?>><?php echo ($ordem_servico->ordem_servico_status == 1 ? 'Paga' : 'Salvar'); ?></button>
-                        <a href="<?php echo base_url('os'); ?>" class="btn btn-secondary btn-sm">Voltar</a>
                     </div>
         </form>
     </div>

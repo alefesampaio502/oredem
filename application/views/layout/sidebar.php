@@ -35,7 +35,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Escolha uma opção</h6>
                        
-                         <a class="collapse-item" title="Gerenciar clientes" href="<?php echo base_url('os');?>"> <i class="fas fa-shopping-basket mr-2 text-gray-900"></i>Ordem Serviços</a>
+                         <a class="collapse-item" title="Gerenciar Vendas" href="<?php echo base_url('vendas');?>"> <i class="fas fa-shopping-cart mr-1"></i>Gerenciar vendas</a><a class="collapse-item" title="Gerenciar clientes" href="<?php echo base_url('os');?>"> <i class="fas fa-shopping-basket mr-2 text-gray-900"></i>Ordem Serviços</a>
                             
                     </div>
                 </div>
@@ -108,7 +108,25 @@
                     </div>
                 </div>
             </li>
-
+          
+            <hr class="sidebar-divider">
+             <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCinco"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                  <i class="fas fa-print"></i>
+                    <span>Relatórios</span>
+                </a>
+                <div id="collapseCinco" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Escolha uma opção</h6>
+                        <a class="collapse-item" title="Gerar relatórios de vendas" href="<?php echo base_url('relatorios/vendas');?>"> <i class="fas fa-shopping-cart mr-1"></i>Vendas</a>
+                        <a class="collapse-item" title="Gerar relatórios de vendas" href="<?php echo base_url('relatorios/os');?>"> <i class="fas fa-shopping-basket mr-1"></i>Ordem de serviços</a>
+                        <a class="collapse-item" title="Gerar relatórios de vendas" href="<?php echo base_url('relatorios/receber');?>"> <i class="fas fa-hand-holding-usd mr-1"></i>Contas a receber</a>
+                    </div>
+                </div>
+            </li>
             <hr class="sidebar-divider">
             <!-- Heading -->
             <div class="sidebar-heading">
@@ -125,7 +143,7 @@
 
             <!-- Nav Item - usuários -->
             <li class="nav-item">
-                <a class="nav-link"  title="Gerenciar dados do sistema" href="<?php echo base_url('sistema')?>">
+                <a class="nav-link"  title="Gerenciar dados do sistema"  href="<?php echo base_url('sistema')?>">
                     <i class="fas fa-cogs"></i>
                     <span>Sistena</span></a>
             </li>

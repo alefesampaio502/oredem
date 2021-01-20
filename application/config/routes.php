@@ -23,3 +23,9 @@ $route['os/edit/(:num)'] = 'ordem_servicos/edit/$1';
 $route['os/del/(:num)'] = 'ordem_servicos/del/$1';
 $route['os/imprimir/(:num)'] = 'ordem_servicos/imprimir/$1';
 $route['os/pdf/(:num)'] = 'ordem_servicos/pdf/$1';
+
+//vendas 
+$route['vendas'] = 'vendas/index';
+$route['vendas/add'] = 'vendas/add';
+$route['vendas/edit/(:num)'] = 'vendas/edit/$1';
+$route['vendas/del/(:num)'] = 'vendas/del/$1';
