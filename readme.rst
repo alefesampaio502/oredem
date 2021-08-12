@@ -1,70 +1,102 @@
 ###################
-What is CodeIgniter
+sistema web com Codeigniter 3, para geração de ordens de serviços, vendas de produto e muito mais!
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+Nosso objetivos com o Codeigniter 3:
+
+
+    Integrar o template SB Admin - 2, do bootastrap, à nossa aplicação web
+
+    Você aprenderá utilizar hooks, helpers e libriries
+
+    Você aprenderá a fazer requisições Ajax Request
+
+    Você aprenderá a validar a entrada de dados em formulários com a biblioteca 'form_validation'
+
+    Você aprenderá a controlar acesso de usuários a determinados modulos de acordo com o grupo do mesmo
+
+    Você aprenderá a apresentar mensagens de sucesso, erro ou info para o usuário utilizando Flashdata
+
+    Você aprenderá a fazer uso do helper 'Security' para tornar a sua aplicação web mais segura
+
+    Você aprenderá a melhorar o carregamento de suas páginas, minificando todo o HTML, fazendo uso de hooks como exemplo o compress
+
+    Você aprenderá a exibir sua própria página de 'Page not found'
+
+    Você aprenderá a realizar conexão com banco de dado MySQL, fazer consultas com a cláusula JOIN entre outros
+
+    Você aprenderá a hospedar o sistema web produzido em provedor de hospedagem gratuito
+
+Construiremos um sistema web com geração de ordem de serviço, contendo os seguintes módulos:
 
 *******************
-Release Information
+Nosso objetivos com o Codeigniter 3:
 *******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+Modulo vendas (Criação, Edição e Deleção):
 
-**************************
-Changelog and New Features
-**************************
+    Venda de produtos com geração de PDF para impressão
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+    Ordem de serviços com geração de PDF para impressão
 
-*******************
-Server Requirements
-*******************
+Modulo cadastro (Criação, Edição e Deleção):
 
-PHP version 5.6 or newer is recommended.
+    Cadastro de clientes
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+    Cadastro de Fornecedores
 
-************
-Installation
-************
+    Cadastro de Vendedor
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+    Cadastro de Serviços
 
-*******
-License
-*******
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+Modulo estoque (Criação, Edição e Deleção):
 
-*********
-Resources
-*********
+    Cadastro de Marcas
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
+    Cadastro de Produtos
 
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
+    Cadastro de Categorias
 
-***************
-Acknowledgement
-***************
 
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+Modulo financeiro (Criação, Edição e Deleção):
+
+    Contas a pagar
+
+    Contas a receber
+
+    Formas de pagamento
+
+
+Modulo relatórios :
+
+    Vendas
+
+    Ordens de serviços
+
+    Contas a receber
+
+    Contas a pagar
+
+
+Modulo configurações (Criação, Edição e Deleção):
+
+    Gerenciamento de usuários
+
+    Controle de acesso a determinados módulos, conforme perfil
+
+     Configurações gerais do sistema
+
+-> Módulo que gerencia informações como:
+
+* Razão social da empresa
+
+* Nome fantasia da empresa
+
+* CNPJ
+
+* E-mail
+
+* Enderço e outros.
+
+
