@@ -1,5 +1,5 @@
 ###################
-sistema web com Codeigniter 3, para geração de ordens de serviços, vendas de produto e muito mais!
+Sistema web com Codeigniter 3, para geração de ordens de serviços, vendas de produto e muito mais!
 ###################
 
 Nosso objetivos com o Codeigniter 3:
